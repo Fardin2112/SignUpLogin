@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+}
+.signup{
+  width: 100%;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("../img/bg2.jpg"); */
+  background-size: cover;
+}
+.container{
+    height: 600px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000000;
+    border: 2px solid black;
+    border-radius: 20%;
+    background: #000;
+    background: transparent;
+}
+.container-box{
+    margin-top: 30px;
+    background: transparent;
+    /* background: blue; */
+}
+.container .Signup-heading {
+  font-size: 3em;
+  letter-spacing: 1px;
+  padding-top: 10px;
+}
+.container h3{
+  font-size: 1.5em;
+  /* color: rgba(165, 243, 255, 0.904); */
+  font-weight: 500;
+}
+.container-box form{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container-box input{
+  width: 300px;
+  border: none;
+  border-bottom: 2px solid black;
+  background: transparent;
+  height: 40px;
+  margin-bottom: 10px;
+  font-size: large;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #000000;
+  font-weight: 700;
+}
+.container-box ::placeholder {
+  color: rgb(190, 191, 192);
+  opacity: 0.9;
+}
+.container-forget{
+  display: flex;
+  flex-direction: row;
+}
+.container-forget input {
+  width: 30px;
+  height: 20px;
+}
+.sign-button{
+  width: 200px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: rgb(72, 72, 255);
+  color: #fff;
+  font-size: large;
+  font-weight: 600;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+.signup-using-g-ldn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  width: 500px;
+  gap:80px;
+}
+.already-login{
+  padding-top: 20px;
+  font-size: large;
+}
