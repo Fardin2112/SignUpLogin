@@ -1,0 +1,22 @@
+.div-nav{
+    padding-top: 5px;
+    height: 70px;
+    width: 100%;
+    display: flex;
+}
+.navbar-left{
+    width: 50%;
+}
+.navbar-left h1{
+    font-size: 2em;
+    margin-left: 20px;
+}
+.navbar-right{
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 40px;
+}
+.nav-sign{
+    margin-right: 40px;
+}
