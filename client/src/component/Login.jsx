@@ -1,50 +1,91 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { BiLogoGoogle } from "react-icons/bi";
-import { BiLogoLinkedin } from "react-icons/bi"
+import { BiLogoLinkedin } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
 
-function Login(){
-    return(
-        <>
+function Login() {
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    // console.log("yes")
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/login", { email, password })
+      .then((result) => {
+        console.log(result)
+        if(result.data === "Success"){
+          navigate("/register");
+        }else{
+          console.log("failed")
+        }
+      })
+      .catch(err=>console.log(err))
+  };
+  return (
+    <>
       <div className="signup">
         <div className="container">
           <h1 className="Signup-heading">Login</h1>
           <div className="container-box">
-            <form action="">
-              {/* <h3 className="user-name">Name</h3>
-              <input type="text" placeholder="Your Name" /> */}
+
+            <form onSubmit={handleSubmit}>
               <h3>Email</h3>
-              <input type="email" placeholder="Email" />
+              <input 
+              type="email"
+              placeholder="Email"
+              // name = "email"
+              onChange={(e)=> setEmail(e.target.value)}
+              />
               <h3>Password</h3>
-              <input type="password" placeholder="Password" />
+              <input 
+              type="password" 
+              placeholder="Password"
+              onChange={(e)=> setPassword(e.target.value)} 
+              />
+              <div className="btncen">
+                  <button type="sumbit" className="sign-button">Log in</button>
+              </div>
             </form>
+
           </div>
           <label className="container-forget">
-            {/* <input type="checkbox" /> */}
-            <p>Already forget password <Link to="/forget">Forget password</Link></p>
+            <p>
+              Already forget password <Link to="/forget">Forget password</Link>
+            </p>
           </label>
-          <button className="sign-button">Log in</button>
+          
           <div className="signup-using-g-ldn">
             <Link
-              style={{ border: "1px solid black", backgroundColor: "#3b3bfc" , borderRadius:"5px" }}
+              style={{
+                border: "1px solid black",
+                backgroundColor: "#3b3bfc",
+                borderRadius: "5px",
+              }}
             >
               <BiLogoGoogle
                 style={{ width: "110px", height: "40px", color: "white" }}
               />
             </Link>
             <Link
-              style={{ border: "1px solid black", backgroundColor: "#3b3bfc", borderRadius:"5px"  }}
+              style={{
+                border: "1px solid black",
+                backgroundColor: "#3b3bfc",
+                borderRadius: "5px",
+              }}
             >
               <BiLogoLinkedin
                 style={{ width: "110px", height: "40px", color: "white" }}
               />
             </Link>
           </div>
-          {/* <p className="already-login">
-            Already Login <Link>Login</Link>
-          </p> */}
         </div>
       </div>
     </>
-    )
+  );
 }
-export default Login
+export default Login;
