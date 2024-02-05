@@ -24,10 +24,9 @@ mongoose
                   res.json(" The password is incorrect")
                 }
               } else {
-                res.json("Invalid Email")
+                res.json("User Not Found")
               }
             })
-            // .catch("User not found")
           })
           
 

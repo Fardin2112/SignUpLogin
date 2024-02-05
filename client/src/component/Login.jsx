@@ -19,9 +19,9 @@ function Login() {
       .then((result) => {
         console.log(result)
         if(result.data === "Success"){
-          navigate("/register");
+          navigate("/logged");
         }else{
-          console.log("failed")
+          console.log("Something is wrong")
         }
       })
       .catch(err=>console.log(err))
